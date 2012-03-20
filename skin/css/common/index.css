@@ -1,0 +1,103 @@
+.main{
+	width: 940px;
+	margin: 0 10px;
+
+	-moz-box-shadow: 0 0 15px -5px #888;
+	-webkit-box-shadow: 0 0 15px -5px #888;
+	box-shadow: 0 0 15px -5px #888;
+
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+	.main .images{
+        background-color: #000000;
+        border: 20px solid #F1F1F1;
+        position: relative;
+
+		-webkit-border-top-left-radius: 15px;
+		-webkit-border-top-right-radius: 15px;
+		-moz-border-radius-topleft: 15px;
+		-moz-border-radius-topright: 15px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+	}
+		.main .images .container{
+			overflow: hidden;
+			background-color: #000;
+		}
+			.main .images .container div{
+				width: 50%;
+				line-height: 500px;
+			}
+				.main .images .container div img{
+					vertical-align: middle;
+				}
+				.main .images .container div:first-child{
+					text-align: right;
+				}
+
+	.main .social{
+		background-color: #ffffff;
+        padding: 10px 20px 0;
+	}
+
+
+
+.share_button{
+    margin-right: 10px;
+    padding-top: 10px;
+    width: 120px;
+}
+    .share_button table{
+        margin: 0;
+    }
+/*
+.fb_ltr {
+    min-width: 96px;
+}
+  */
+.fb_edge_comment_widget {
+	top: -230px !important;
+}
+
+    #disqus_thread {
+        background: #fff;
+
+        display: none;
+        padding: 20px 20px 0;
+    }
+    .main .bottom {
+        height: 15px;
+        background: #fff;
+
+        -webkit-border-bottom-right-radius: 15px;
+        -webkit-border-bottom-left-radius: 15px;
+        -moz-border-radius-bottomright: 15px;
+        -moz-border-radius-bottomleft: 15px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+#disqus_thread, .dsq-trackback-url, #dsq-content-stub img  {
+    margin-bottom: 0 !important;
+}
+
+.odkl-klass {
+	display: -moz-inline-stack;
+	display: inline-block;
+	*display: inline;
+	vertical-align: middle;
+	overflow: hidden;
+	text-indent: -3000px;
+	zoom: 1;
+	*text-indent: 0;
+	*font: 0/0 Arial;
+	width: 69px;
+	height: 21px;
+	background: #f58220 url(http://stg.odnoklassniki.ru/share/odkl_klass.gif) no-repeat;
+}
+
+.odkl-klass:hover {
+	background-color: #e83;
+}

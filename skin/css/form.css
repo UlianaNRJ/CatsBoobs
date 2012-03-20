@@ -1,0 +1,209 @@
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+input::-moz-focus-outer{
+    border: 0;
+    padding: 0;
+	outline: none;
+}
+
+input:-webkit-autofill {
+    color: #fff !important;
+	background-color: #fff !important;
+	/* http://code.google.com/p/chromium/issues/detail?id=1334 */
+}
+
+input:focus,
+input:hover,
+input:active,
+textarea,
+select,
+button,
+a {
+    outline: none;
+}
+
+
+/***********************/
+
+form {
+	overflow: auto;
+}
+form.normal {
+	width: 346px;
+}
+
+	input,
+	/*select,*/
+	textarea {
+		font-size: 13px;
+		background: none;
+		margin-bottom: 0.5em;
+		border: 1px solid #E7E1D3;
+		padding: 6px 8px;
+	}
+
+	select {
+		width: 146px;
+	}
+
+	input[type="text"],
+	input[type="file"],
+	input[type="password"]{
+		width: 180px;
+        background-color: #fff;
+	}
+
+	input[type="submit"]{
+		float: right;
+	}
+
+	input[type="image"]{
+		border: none;
+		margin: 0 auto;
+		display: block;
+	}
+
+    input[type=file] {
+        visibility: hidden;
+        float: left;
+        height: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    textarea {
+		width: 327px;
+		height: 75px;
+		display: block;
+	}
+
+	input[type=checkbox],
+	input[type=radio] {
+		padding: 0;
+		margin-right: 5px;
+		margin-top: 8px;
+	}
+	input[type=checkbox] + label {
+		margin-top: 1px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		line-height: 20px;
+	}
+	input[type=checkbox]:checked + label {
+
+	}
+	input[type=checkbox][disabled]  + label {
+		color: #808080;
+		cursor: default;
+	}
+
+	input[type=radio] {
+
+	}
+	input[type=radio] + label {
+		margin-top: 1px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		color: #000;
+		font-weight: normal;
+		line-height: 20px;
+	}
+	input[type=radio]:checked + label {
+	}
+
+	label {
+		color: #666;
+		font-weight: bold;
+		cursor: pointer;
+		padding-right: 1em;
+		font-size: 13px;
+		margin-bottom: 0.5em;
+		width: 130px;
+		line-height: 32px;
+
+		display: inline-block;
+		zoom: 1; *display: inline; /* IE < 8: fake inline-block */
+		letter-spacing: normal;
+		word-spacing: normal;
+		vertical-align: top;
+	}
+	label.multiline {
+		line-height: 16px;
+	}
+
+form.wide {
+	width: 475px;
+}
+	form.wide input[type="text"],
+	form.wide input[type="password"]{
+		width: 310px;
+	}
+	form.wide textarea{
+		width: 459px;
+	}
+
+	form .separator {
+		background: url("../img/dots-form.png")transparent left center scroll repeat-x;
+		height: 1px;
+		margin: 5px 0 10px;
+	}
+
+.button {
+	background: #FFFFFF no-repeat scroll 174px center;
+    color: #666666;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+	vertical-align: middle;
+    text-decoration: none;
+    width: 184px;
+	border: 1px solid #E7E1D3;
+}
+	.button.small {
+		width: 68px;
+		background-position: 58px center;
+	}
+	input.button {
+		/* I hate inputs */
+		width: 200px;
+		height: 31px;
+		*filter:chroma(color=#000000); /* removes black border ie6/7 only */
+		overflow: visible;
+	}
+	input.button:hover,
+	input.button:focus {
+		color: #000;
+	}
+	input.button.small {
+		width: 84px;
+	}
+
+	/*
+		TODO use img + rotate
+		-webkit-transform:rotate(90deg);
+		-moz-transform:rotate(90deg);
+		-o-transform:rotate(90deg);
+		filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+		-ms-transform:rotate(90deg);
+		transform:rotate(90deg);
+	*/
+
+.left_column label {
+	width: 180px;
+}
+	.markers [type=checkbox],
+	.markers [type=radio]{
+		margin-top: 12px;
+	}
+	.markers label {
+	    line-height: 37px !important;
+	    margin-bottom: 0 !important;
+	    margin-top: 0 !important;
+	    padding-bottom: 0 !important;
+	    padding-top: 0 !important;
+	}
+	.markers label span {
+		margin-bottom: 0 !important;
+		margin-top: 2px;
+	}

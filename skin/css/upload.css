@@ -1,0 +1,64 @@
+.uploader{
+    padding: 20px;
+}
+    .uploader .ui-dialog-titlebar{
+        display: none;
+    }
+    .uploader .ui-dialog-buttonpane{
+        padding: 0;
+        border-width: 0;
+    }
+        .uploader .ui-dialog-buttonpane .ui-dialog-buttonset {
+            float: none;
+            text-align: center;
+        }
+
+#upload_dialog{
+    display: none;
+}
+    #upload_dialog .ib{
+        width: 50%;
+        text-align: center;
+    }
+    #upload_dialog .note{
+        color: #878787;
+        font-size: 11px;
+    }
+    #upload_dialog .title{
+        color: #313131;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    #upload_dialog button{
+        margin: 10px auto;
+    }
+
+
+#sorting {
+    display: none;
+}
+
+.name, .size, .error {
+    height: 20px;
+}
+
+.error {
+    color: #f00;
+    font-weight: bold;
+}
+.success {
+    color: #0f0;
+    font-weight: bold;
+}
+#loading{
+    background: url("../img/ajax-loader2.gif") transparent 0 0 scroll no-repeat;
+    height: 16px;
+    width: 16px;
+    float: left;
+    display: none;
+}
+
+#status {
+    text-align: center;
+    height: 20px;
+}

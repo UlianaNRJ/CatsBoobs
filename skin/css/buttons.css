@@ -1,0 +1,111 @@
+div.upload{
+	background: url("../img/upload.png") transparent 0 0 scroll no-repeat;
+	width: 219px;
+	height: 76px;
+	margin: 0 auto;
+}
+	.upload.active{
+		background-position: 0 -76px;
+	}
+
+a.about{
+	background: url("../img/about.png") transparent 0 0 scroll no-repeat;
+	width: 115px;
+	height: 38px;
+	float: left;
+	margin-left: 150px;
+	margin-top: 20px;
+}
+	.about.active{
+		background-position: 0 -40px;
+	}
+
+
+.holder{
+    height: 450px;
+    line-height: 450px;
+    position: absolute;
+    top:0;
+
+}
+    .holder.left{
+        left: 0;
+    }
+    .holder.right{
+        right: 0;
+    }
+.arrow {
+    background: url("../img/arrow3.png") transparent 0 0 scroll no-repeat;
+    width: 55px;
+    height: 75px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+.left .arrow{
+    background-position: 0 0;
+}
+.left .arrow.active{
+    background-position: 0 -103px;
+}
+.right .arrow {
+    background-position: -95px 0px;
+}
+.right .arrow.active{
+    background-position: -95px -103px;
+}
+
+#show_comments{
+    width: 137px;
+    height: 39px;
+    display: block;
+    background: url("../img/comments.png") transparent 0 0 scroll no-repeat;
+}
+#show_comments.active{
+    background-position: 0 -39px;
+}
+
+
+#sorting-button{
+	float: right;
+	margin-right: 125px;
+	margin-top: 20px;
+}
+
+
+.social4{
+    display: inline;
+    margin-left: -63px;
+}
+    .social4 li{
+        padding: 17px 5px 10px 0;
+    }
+    .social4 li a{
+        height: 28px;
+        width: 28px;
+        display: block;
+        background: url("../img/social4.png") transparent 0 0 scroll no-repeat;
+    }
+    .social4 .twitter{
+        background-position: -116px 0;
+    }
+    .social4 .twitter.active{
+        background-position: -116px -28px;
+    }
+    .social4 .facebook{
+        background-position: -78px 0;
+    }
+    .social4 .facebook.active{
+        background-position: -78px -28px;
+    }
+    .social4 .email{
+        background-position: 0 0;
+    }
+    .social4 .email.active{
+        background-position: 0 -28px;
+    }
+    .social4 .vkontakte{
+        background-position: -34px 0;
+    }
+    .social4 .vkontakte.active{
+        background-position: -34px -28px;
+    }

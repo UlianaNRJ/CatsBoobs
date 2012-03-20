@@ -1,0 +1,25 @@
+https://bitbucket.org/kenjis/my-ciunit/overview
+
+http://d.hatena.ne.jp/Kenji_s/20110718/1310965384
+http://d.hatena.ne.jp/Kenji_s/20110905/1315190819
+
+TODO
+
+1) fix session to use current session manager
+	- fix current session manager to work with SP_prefix
+	- fix session drivers to starts with SP_ and CUI_
+
+2) fix controllers to use CI_Output
+
+3) move code from /library to /third_party
+
+4) fix tests logs path
+
+5) fix models? do we need this? do we need this models at all or we can use Doctrine for example
+
+6) use https://github.com/sebastianbergmann/php-code-coverage
+
+X) remove garbage
+	- /tools
+	- /generate*
+	- / this readme

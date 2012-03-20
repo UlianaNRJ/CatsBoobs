@@ -1,0 +1,21 @@
+ul.error-message,
+ul.success-message {
+	list-style-image: url("../img/form/msg-error.jpg");
+	list-style-position: inside;
+	display: block;
+	color: #FF0000;
+	margin-bottom: 15px;
+}
+ul.success-message {
+	list-style-image: url("../img/form/msg-success.jpg");
+	color: #4C8800;
+}
+	form ul.error-message {
+		margin-left: 150px;
+	}
+
+noscript p {
+	padding: 5px 10px;
+	background: #ffdde9;
+	border: 1px solid #e76792;
+}

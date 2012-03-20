@@ -1,0 +1,9 @@
+Installation
+
+PHP 5.2.6
+MySQL 5.5
+
+grant write mode to dirs
+	temp
+	aplicatiom/logs
+

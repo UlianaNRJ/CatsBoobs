@@ -1,0 +1,131 @@
+table {
+    margin: 5px 0;
+}
+	table thead{
+
+	}
+		table thead tr{
+
+		}
+			table thead tr th,
+			table tfoot tr th{
+				line-height: 30px;
+				background-color:#32323c;
+				white-space: nowrap;
+				text-align: center;
+			}
+				table thead th a {
+					text-decoration: underline;
+					color: #fff;
+				}
+				table thead th a:hover {
+					color: #8cc800;
+				}
+			table thead tr td,
+			table tfoot tr td{
+				background-color: #f0f0eb;
+			}
+
+
+	table tbody{
+
+	}
+		table tbody tr{
+
+		}
+		table tbody tr:hover{
+
+		}
+			table tbody tr td {
+
+			}
+			table tbody tr td.title {
+				text-align: left;
+				vertical-align: top;
+				width: 200px;
+			}
+				table tbody tr td a{
+
+				}
+				table tbody tr td.title a{
+					text-decoration: underline;
+					color: #872355;
+					font-weight: bold;
+				}
+
+	table tfoot{
+
+	}
+		table tfoot tr{
+
+		}
+			table tfoot tr td {
+
+			}
+
+
+table.highlight tr:hover {
+	background-color: #FFFEDE;
+}
+
+
+
+table.wide {
+    width: 100%;
+}
+    table tr td.wide {
+        width: 100%;
+    }
+
+table.list {
+    background-color: #f9f9f9;
+    border-collapse: collapse;
+    border: solid 1px #aaa;
+}
+table.list.wide {
+    width: 100%;
+}
+    table.list tr{
+        border-bottom: solid 1px #aaa;
+    }
+        table.list tr th {
+            padding: 7px 10px;
+            min-height: 25px;
+            white-space: nowrap;
+            background-color: #444;
+            color: #f0f0f0;
+        }
+            table.list tr th a {
+                color: #fff;
+                text-decoration: none;
+            }
+            table.list tr th a:hover {
+                text-decoration: underline;
+            }
+        table.list tr td {
+            padding: 7px 10px;
+            border-bottom: solid 1px #aaa;
+        }
+        table.list tr.odd td {
+            background-color: #ffbbd2;
+        }
+        table.list tr.even td {
+            /*background-color: #414141;*/
+        }
+        table.list tr:hover td {
+            background-color: #feffbf;
+        }
+        table.list tr td.empty {
+            color: #707070;
+            padding: 75px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+.paging {
+    text-align: center;
+}
+.paging li{
+    padding: 3px 5px;
+}
+
