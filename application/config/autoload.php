@@ -65,7 +65,7 @@ $autoload['libraries'] = array('database', 'session', 'messages', 'encrypt', 'sm
 */
 
 $autoload['helper'] = array('date', 'cookie', 'string', 'url',
-	'siteurl', 'text2html', 'guid', 'dump', 'paging');
+	'siteurl', 'guid', 'paging');
 
 
 /*
