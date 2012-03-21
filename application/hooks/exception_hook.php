@@ -28,6 +28,7 @@
 	/**
 	 * Обработчик исключений
 	 * @redirect internal-server-error
+	 * @param Exception $e
 	 * @return void
 	 */
 	function sp_exception_handler(Exception $e) {

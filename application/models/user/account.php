@@ -10,7 +10,6 @@ abstract class UserAccountModel extends AbstractEntityModel {
 		$this->_addProperty('dateUpdated', 'date_updated', DATE_EMPTY);
 		$this->_addProperty('dateVisit', 'date_visit', DATE_EMPTY);
 
-		//$this->_addProperty('login', 'login', null);
 		$this->_addProperty('email', 'email', null);
 		$this->_addProperty('autologin', '', null);
 

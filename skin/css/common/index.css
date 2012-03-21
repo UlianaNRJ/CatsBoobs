@@ -52,11 +52,7 @@
     .share_button table{
         margin: 0;
     }
-/*
-.fb_ltr {
-    min-width: 96px;
-}
-  */
+
 .fb_edge_comment_widget {
 	top: -230px !important;
 }

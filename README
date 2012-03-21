@@ -1,7 +1,7 @@
 Installation
 
 PHP 5.2.6
-MySQL 5.5
+MySQL 5.0
 
 grant write mode to dirs
 	temp

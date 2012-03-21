@@ -118,7 +118,6 @@ jQuery(document).ready(function($){
 
 	$(".vkontakte, .twitter, .facebook").click(function(){
 		_gaq.push(['_trackEvent', 'External_links', 'Exit', $(this).attr("class")]);
-	})
-
+	});
 
 });

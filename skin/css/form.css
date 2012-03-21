@@ -131,23 +131,6 @@ form.normal {
 		line-height: 16px;
 	}
 
-form.wide {
-	width: 475px;
-}
-	form.wide input[type="text"],
-	form.wide input[type="password"]{
-		width: 310px;
-	}
-	form.wide textarea{
-		width: 459px;
-	}
-
-	form .separator {
-		background: url("../img/dots-form.png")transparent left center scroll repeat-x;
-		height: 1px;
-		margin: 5px 0 10px;
-	}
-
 .button {
 	background: #FFFFFF no-repeat scroll 174px center;
     color: #666666;

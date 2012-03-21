@@ -15,6 +15,7 @@ class My_Controller extends CI_Controller {
 
 	/**
 	 * @param string $output
+	 * @return void
 	 */
 	public function _output($output){
 		// headers from google plus
@@ -66,7 +67,8 @@ class My_Controller extends CI_Controller {
 	 * Redirects user to new page and EXIT!
 	 * @param string $location - url for redirect
 	 * @param string $requestType - protocol
-	 * @param int $httpResponseCode - http code
+	 * @param int $httpResponseCode - http
+	 * @return void
 	 */
 	protected function redirect($location = '', $requestType = 'http', $httpResponseCode = 302) {
 		$this->session->sess_write();

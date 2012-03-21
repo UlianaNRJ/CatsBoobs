@@ -40,13 +40,4 @@ class AdminAccountListModel extends UserAccountListModel {
 		return $this->getSingle();
 	}
 
-	/**
-	 * @param string $guid
-	 * @return AdminAccountModel
-	 */
-	public function getByGuid($guid) {
-		$this->db->where('guid', $guid);
-		return $this->getSingle();
-	}
-
 }
