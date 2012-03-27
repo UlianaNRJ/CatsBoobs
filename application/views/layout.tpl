@@ -121,7 +121,7 @@
 		<div style="display:none;">
 			<script type="text/javascript">
 				{literal}
-				(function(w,c){(w[c]=w[c]||[]).push(function(){try{w.yaCounter13079503=new Ya.Metrika({id:13079503,enableAll:true});}catch(e){}});})(window, "yandex_metrika_callbacks");
+				(function(w,c){(w[c]=w[c]||[]).push(function(){try{w.yaCounter13079503=new Ya.Metrika({id:13079503,enableAll:true,webvisor:true});}catch(e){}});})(window, "yandex_metrika_callbacks");
 				{/literal}
 			</script>
 		</div>
