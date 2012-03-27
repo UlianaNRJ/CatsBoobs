@@ -1,5 +1,5 @@
 .idea
-temp
+temp/*
 application/logs/*
 application/config/local/*
 T3

@@ -33,20 +33,30 @@ class Common extends AbstractController {
 	public function indexAjaxPost() {
 		$post = $this->getPostData();
 
-		if(!isset($post['sort']))$post['sort']='date_desc';
-		if(!isset($post['id']))$post['id']=null;
+		if(!isset($post['sort'])){
+			$post['sort']='date_desc';
+		}
+		if(!isset($post['id'])){
+			$post['id']=null;
+		}
+
+
 
 		$postListModel = new PostListModel();
 		switch($post['sort']){
+			case 'rating':
+
+				$postModel = $postListModel->getByRating($post['id']);
+				break;
 			case 'random':
-				$postModel = $postListModel->getByRandom(@$post['id']);
+				$postModel = $postListModel->getByRandom($post['id']);
 				break;
 			case 'date_asc':
-				$postModel = $postListModel->getByDateAsc(@$post['id']);
+				$postModel = $postListModel->getByDateAsc($post['id']);
 				break;
 			case 'date_desc':
 			default:
-				$postModel = $postListModel->getByDateDesc(@$post['id']);
+				$postModel = $postListModel->getByDateDesc($post['id']);
 				break;
 		}
 
@@ -171,58 +181,7 @@ class Common extends AbstractController {
 		//echo '</textarea>';
 		return;
 	}
-/*
-	protected function _rating($postId) {
-		$ratingListModel = new RatingListModel();
-		return $ratingCount = $ratingListModel->getCount($postId);
-	}
 
-	public function ratingPost() {
-		$data = (object) $this->getPostData();
-
-		$postListModel = new PostListModel();
-		$postModel = $postListModel->getByUniqid($data->uniqid);
-
-		$ratingListModel = new RatingListModel();
-		$ratingModel = $ratingListModel->getByPostId($data->uniqid, $_SERVER['REMOTE_ADDR']);
-
-		$status = '';
-		$message = '';
-
-		if ($data->action == 'del'){
-			if ($ratingModel){
-				$ratingModel->remove();
-				$postModel->setRating($postModel->getRating()-1);
-				$postModel->save();
-				$message = 'твой голос учтен';
-				$status = 'success';
-			} else {
-				$message = 'ошибочка вышла';
-				$status = 'error';
-			}
-		} else if($data->action == 'add') {
-			if (!$ratingModel){
-				$ratingModel = new RatingModel();
-				$ratingModel->bind($data);
-				$ratingModel->setIp($_SERVER['REMOTE_ADDR']);
-				$ratingModel->save();
-
-				$postModel->setRating($postModel->getRating()+1);
-				$postModel->save();
-				$message = 'все, больше не нравится';
-				$status = 'success';
-			} else {
-				$message = 'ты уже голосовал!';
-				$status = 'error';
-			}
-		} else {
-			$message = 'чо ты там мутишь?';
-			$status = 'error';
-		}
-		
-		echo json_encode(array('status'=>$status, 'message'=>$message));
-	}
- */
 	public function pageNotFound() {
 		return $this->getActionResult();
 	}

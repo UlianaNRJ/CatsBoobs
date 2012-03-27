@@ -11,7 +11,9 @@ class PostModel extends AbstractEntityModel {
 
 		$this->_addProperty('status', 'status');
 		$this->_addProperty('dateCreated', 'date_created', DATE_EMPTY);
+		$this->_addProperty('dateUpdated', 'date_updated', DATE_EMPTY);
 		$this->_addProperty('uniqid', 'uniqid');
+		$this->_addProperty('rating', 'rating', 0);
 
 		$this->_addProperty('next', '');
 		$this->_addProperty('prev', '');
@@ -21,10 +23,14 @@ class PostModel extends AbstractEntityModel {
 	public function _insertRecord(){
 		$time = time();
 		$this->dateCreated = date(SQL_FORMAT, $time);
-		$this->status = PostStatus::ACCEPTED;
+		$this->status = PostStatus::PENDING;
 		return parent::_insertRecord();
 	}
 
+	protected function _updateRecord() {
+		$this->dateUpdated = date(SQL_FORMAT, time());
+		return parent::_updateRecord();
+	}
 }
 
 class PostStatus {

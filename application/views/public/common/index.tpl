@@ -1,6 +1,7 @@
 <a href="/about/" class="about"></a>
 <select id="sorting">
 	<option value="random">Случайные</option>
+	<option value="rating">По рейтингу</option>
 	<option value="date_desc">Новые</option>
 	<option value="date_asc">Старые</option>
 </select>

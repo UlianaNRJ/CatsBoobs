@@ -38,12 +38,26 @@ class PostListModel extends AbstractListModel {
 	}
 
 	public function getByRating($id=null) {
-		$this->db->order_by('rating', 'desc');
+		$this->db->select('t1.*');
+		$this->db->from($this->tableName.' as t1');
 		$this->db->where('status', PostStatus::ACCEPTED);
+		$this->db->order_by('rating', 'desc');
 		if ($id){
 			$this->db->where('id', $id);
 		}
-		return $this->getSingle();
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+		$list = array();
+		if ($query->num_rows()) {
+			foreach ($query->result() as $row) {
+				$post = $this->bind($row);
+				$this->addNeighbours3($post);
+				$list[$row->id] = $post;
+			}
+			$query->free_result();
+		}
+		return array_shift($list);
 	}
 
 	public function getByRandom($id=null) {
@@ -56,7 +70,6 @@ class PostListModel extends AbstractListModel {
 			$this->db->order_by('RAND()');
 		}
 		$this->db->limit(1);
-
 
 		$query = $this->db->get();
 		$list = array();
@@ -75,6 +88,13 @@ class PostListModel extends AbstractListModel {
 		$this->db->order_by('date_created', 'desc');
 		$this->db->where('status', PostStatus::ACCEPTED);
 		$this->ci()->db->limit($limit, $offset);
+		return $this->getAll();
+	}
+
+	public function getCron() {
+		$this->db->order_by('RAND()');
+		$this->db->where('status', PostStatus::ACCEPTED);
+		$this->ci()->db->limit(35);
 		return $this->getAll();
 	}
 
@@ -108,6 +128,8 @@ class PostListModel extends AbstractListModel {
 	}
 
 	protected function buildList($query) {
+		//var_dump($this->db->last_query());
+		//exit;
 		$list = array();
 		if ($query->num_rows()) {
 			foreach ($query->result() as $row) {
@@ -124,12 +146,12 @@ class PostListModel extends AbstractListModel {
 	 * @param $post
 	 */
 	protected function addNeighbours($post){
-
 		$query = $this->db->query(
-				"SELECT * FROM
-				(SELECT MAX(id) as prev FROM posts WHERE date_created < ? AND status = ? ORDER BY date_created DESC LIMIT 1) as t1,
-				(SELECT MIN(id) as next FROM posts WHERE date_created > ? AND status = ? ORDER BY date_created ASC LIMIT 1) as t2;"
-		, array(date(SQL_FORMAT, $post->getDateCreated()), PostStatus::ACCEPTED, date(SQL_FORMAT, $post->getDateCreated()), PostStatus::ACCEPTED));
+				"SELECT
+				(SELECT MAX(id) FROM posts WHERE date_created < ? AND status = ? ORDER BY date_created DESC LIMIT 1) as prev,
+				(SELECT MIN(id) FROM posts WHERE date_created > ? AND status = ? ORDER BY date_created ASC LIMIT 1) as next;"
+		, array(date(SQL_FORMAT, $post->getDateCreated()), PostStatus::ACCEPTED,
+				date(SQL_FORMAT, $post->getDateCreated()), PostStatus::ACCEPTED));
 		$row = $query->row();
 		$post->setPrev($row->prev);
 		$post->setNext($row->next);
@@ -137,10 +159,23 @@ class PostListModel extends AbstractListModel {
 
 	protected function addNeighbours2($post){
 		$query = $this->db->query(
-				"SELECT * FROM
-				(SELECT id as prev FROM posts WHERE id != ? AND status = ? ORDER BY RAND() LIMIT 1) as t1,
-				(SELECT id as next FROM posts WHERE id != ? AND status = ? ORDER BY RAND() LIMIT 1) as t2;"
-		, array($post->getId(), PostStatus::ACCEPTED, $post->getId(), PostStatus::ACCEPTED));
+				"SELECT
+				(SELECT id FROM posts WHERE id != ? AND status = ? ORDER BY RAND() LIMIT 1) as prev,
+				(SELECT id FROM posts WHERE id != ? AND status = ? ORDER BY RAND() LIMIT 1) as next;"
+		, array($post->getId(), PostStatus::ACCEPTED,
+				$post->getId(), PostStatus::ACCEPTED));
+		$row = $query->row();
+		$post->setPrev($row->prev);
+		$post->setNext($row->next);
+	}
+
+	protected function addNeighbours3($post){
+		$query = $this->db->query(
+			"SELECT
+				(SELECT id FROM posts WHERE rating < ? OR (rating = ? AND id < ?) AND status = ? ORDER BY rating DESC, id DESC LIMIT 1) as prev,
+				(SELECT id FROM posts WHERE rating > ? OR (rating = ? AND id > ?) AND status = ? ORDER BY rating ASC, id ASC LIMIT 1) as next"
+			, array($post->getRating(), $post->getRating(), $post->getId(), PostStatus::ACCEPTED,
+				$post->getRating(), $post->getRating(), $post->getId(), PostStatus::ACCEPTED));
 		$row = $query->row();
 		$post->setPrev($row->prev);
 		$post->setNext($row->next);

@@ -48,6 +48,7 @@
     margin-right: 10px;
     padding-top: 10px;
     width: 120px;
+	position: relative;
 }
     .share_button table{
         margin: 0;
