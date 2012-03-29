@@ -16,10 +16,18 @@ abstract class AbstractController extends My_Controller {
 			str_replace("-", "_", $RTR->fetch_method())
 		);*/
 
+		$lang = $this->session->userdata('lang');
+		if (!$lang) {
+			$config =& get_config();
+			$lang = $config['language'];
+		}
+		$this->config->set_item('language', $lang);
+
 		$this->getActionData()
 			->add('directory', current(explode("/",$RTR->fetch_directory()."public")), true)
 			->add('class', $RTR->fetch_class(), true)
-			->add('method', str_replace("-", "_", $RTR->fetch_method()), true);
+			->add('method', str_replace("-", "_", $RTR->fetch_method()), true)
+			->add('lang', $lang, true);
 
 		$this
 			->addCss('smoothness/jquery-ui.css')
@@ -28,6 +36,8 @@ abstract class AbstractController extends My_Controller {
 			->addJs('jquery-1.7.1.min.js')
 			->addJs('jquery-ui.js')
 			->addJs('common.js');
+
+
 	}
 
 	public function getActionResult($layout = 'layout') {

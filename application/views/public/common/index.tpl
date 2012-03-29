@@ -1,11 +1,13 @@
-<a href="/about/" class="about"></a>
+{config_load file="{$lang|substr:0:3}common.conf" section="index"}
+
+<a href="/about/" class="about">{#about#}</a>
 <select id="sorting">
-	<option value="random">Случайные</option>
-	<option value="rating">По рейтингу</option>
-	<option value="date_desc">Новые</option>
-	<option value="date_asc">Старые</option>
+	<option value="random">{#sort_random#}</option>
+	<option value="rating">{#sort_rating#}</option>
+	<option value="date_desc">{#sort_new#}</option>
+	<option value="date_asc">{#sort_old#}</option>
 </select>
-<div class="upload"></div>
+<div class="upload">{#upload#}</div>
 
 
 <div class="main">
@@ -13,14 +15,14 @@
 		<div class="holder left">
 			<a class="ib arrow" href="#"></a>
 		</div>
-		<img src="{if $postModel}{baseurl()}content/{$postModel->getUniqid()}.png"{/if}" id="catsboobs" width="900" height="450" alt="Сиськи и котики - семейный развлекательный портал"/>
+		<img src="{if $postModel}{baseurl()}content/{$postModel->getUniqid()}.png"{/if}" id="catsboobs" width="900" height="450" alt="{#image_title#}"/>
 		<div class="holder right">
 			<a class="ib arrow" href="#"></a>
 		</div>
 	</div>
 	<div class="c social">
 		<div class="ib" style="width: 110px; font-size: 14px; font-weight: bold; line-height: 35px;">
-			Поделиться:
+			{#share#}
 		</div>
 		<div class="ib share_button btn_fb">
 
@@ -32,13 +34,13 @@
 
 		</div>
 		<div class="ib share_button btn_ok">
-			<a class="odkl-klass" href="#">Класс!</a>
+			<a class="odkl-klass" href="#">{#klass_text#}</a>
 		</div>
 		<div class="ib" style="padding: 3px 0;width: 130px;">
 
 		</div>
 		<div class="ib ">
-            <a href="#" id="show_comments"></a>
+            <a href="#" id="show_comments">{#comments#}</a>
 		</div>
 	</div>
     <div id="disqus_thread">
@@ -56,17 +58,18 @@
 			send="false"
 			width="450"
 			show_faces="false"
-			href="{baseurl()}#!{literal}${id}{/literal}"
+			href="{baseurl()}#!${ldelim}id{rdelim}"
 			layout="button_count"
+			action="{#facebook_text#}"
 	></fb:like>
 </script>
 <script id="twLike" type="text/x-jquery-tmpl">
-    <a href="{baseurl()}#!{literal}${id}{/literal}"
+    <a href="{baseurl()}#!${ldelim}id{rdelim}"
        class="twitter-share-button"
-       data-url="{baseurl()}#!{literal}${id}{/literal}"
-       data-counturl="{baseurl()}#!{literal}${id}{/literal}"
-       data-text="Мне нравятся котосиськи"
-       data-lang="ru"
+       data-url="{baseurl()}#!${ldelim}id{rdelim}"
+       data-counturl="{baseurl()}#!${ldelim}id{rdelim}"
+       data-text="{#twitter_text#}"
+       data-lang="{$lang|substr:0:2}"
        data-via="CatsBoobs"
        data-hashtags="cats,boobs"
        rel="canonical"

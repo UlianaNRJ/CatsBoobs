@@ -5,10 +5,13 @@
 <ul class="bullet">
 	<li>1</li>
 	<li>2</li>
+	<li>3</li>
 </ul>
 
 <p>What you can try:</p>
 <ul class="bullet">
+	<li>1</li>
+	<li>2</li>
 	<li>3</li>
 	<li>...</li>
 	<li>PROFIT!!</li>

@@ -120,4 +120,17 @@ jQuery(document).ready(function($){
 		_gaq.push(['_trackEvent', 'External_links', 'Exit', $(this).attr("class")]);
 	});
 
+	$("#lang li").click(function(){
+		var self = $(this);
+		$.ajax({
+			url: "/common/change_language/"+self.data("lang")+"/",
+			type: "get",
+			success: function (data){
+				if (data.status == 'success'){
+					window.location.reload(true);
+				}
+			}
+		});
+	});
+
 });

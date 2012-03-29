@@ -3,6 +3,14 @@ div.upload{
 	width: 219px;
 	height: 76px;
 	margin: 0 auto;
+
+	font-size: 22px;
+	color: #fff;
+	text-align: center;
+	line-height: 71px;
+	text-decoration: none;
+
+	text-shadow: 1px 1px 0 #000000;
 }
 	.upload.active{
 		background-position: 0 -76px;
@@ -15,6 +23,12 @@ a.about{
 	float: left;
 	margin-left: 150px;
 	margin-top: 20px;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	font-weight: bold;
 }
 	.about.active{
 		background-position: 0 -40px;
@@ -48,17 +62,22 @@ a.about{
     background-position: 0 -103px;
 }
 .right .arrow {
-    background-position: -95px 0px;
+    background-position: -95px 0;
 }
 .right .arrow.active{
     background-position: -95px -103px;
 }
 
 #show_comments{
-    width: 137px;
-    height: 39px;
-    display: block;
-    background: url("../img/comments.png") transparent 0 0 scroll no-repeat;
+	background: url("../img/comments.png") no-repeat scroll 0 0 transparent;
+	color: #434343;
+	display: block;
+	font-size: 16px;
+	height: 39px;
+	line-height: 37px;
+	text-align: center;
+	text-decoration: none;
+	width: 137px;
 }
 #show_comments.active{
     background-position: 0 -39px;
@@ -97,10 +116,10 @@ a.about{
     .social4 .facebook.active{
         background-position: -78px -28px;
     }
-    .social4 .email{
+    .social4 .rss{
         background-position: 0 0;
     }
-    .social4 .email.active{
+    .social4 .rss.active{
         background-position: 0 -28px;
     }
     .social4 .vkontakte{

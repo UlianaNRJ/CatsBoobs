@@ -1,11 +1,12 @@
+{config_load file="{$lang|substr:0:3}common.conf" section="layout"}
 <!DOCTYPE HTML>
 <html xmlns:og="http://ogp.me/ns#"
       xmlns:fb="http://ogp.me/ns/fb#">
 	<head>
-		<title>Сиськи и котики - семейный развлекательный портал</title>
+		<title>{#title#}</title>
 
-		<meta name="keywords" content="">
-		<meta name="description" content="Это не только квинтэссенция всего приятного в интернете, но и действительно полезный для общества проект, призванный решить самые острые социальные проблемы =) ">
+		<meta name="keywords" content="{#keywords#}">
+		<meta name="description" content="{#description#}">
 		<meta name="generator" content="Microsoft FrontPage 1.0">
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -13,27 +14,28 @@
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="pragma" content="no-cache">
 
-		<meta property="og:title" content="Семейный развлекательный портал «Сиськи и котики»"/>
+		<meta property="og:title" content="{#og_title#}"/>
 		<meta property="og:type" content="article"/>
 		<meta property="og:image" content="{baseurl()}{if isset($postModel)}content/{$postModel->getUniqid()}{else}skin/img/fb_share{/if}.png"/>
 		<meta property="og:url" content="{baseurl()}{if isset($postModel)}#!{$postModel->getId()}{/if}"/>
-		<meta property="og:site_name" content="CatsBoobs"/>
-		<meta property="og:locale" content="ru_RU"/>
+		<meta property="og:site_name" content="{#name#}"/>
+		<meta property="og:locale" content="{$lang}"/>
 		<meta property="fb:app_id" content="325899637437977"/>
 
-		<link rel="icon" href="{baseurl()}/favicon.ico" type="image/x-icon">
-		<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - все картинки" href="{baseurl()}rss" />
+		<link rel="icon" href="{baseurl()}favicon.ico" type="image/x-icon">
+		<link rel="alternate" type="application/rss+xml" title="{#rss_title#}" href="{baseurl()}rss" />
 
 		{foreach from=$this->getCssList() item=css}
 		<link rel="stylesheet" type="text/css" media="{$css->media}" href="{$css->url}">
 		{/foreach}
-		
+
 		<!--[if lt IE 9]>
 		<script src="{$this->getUrl('skin/js/html5.js')}" type="text/javascript"></script>
 		<![endif]-->
 
+		<script src="{$this->getUrl('public/js/')}" type="text/javascript"></script>
 		{foreach from=$this->getJsList() item=js}
-		<script type="text/javascript" src="{$js->url}"></script>
+		<script src="{$js->url}" type="text/javascript"></script>
 		{/foreach}
 	</head>
 	<body class="{$directory}">
@@ -56,14 +58,18 @@
 
 		<header>
 			<div class="c wrapper">
-				<a href="{baseurl()}">
-					<img src="{$this->getImgUrl('logo.png')}" height="38" width="300" id="logo"/>
-					<img src="{$this->getImgUrl('banner.png')}" height="55" width="427" id="banner"/>
+				<ul id="lang" class="c">
+					<li class="ib russian" data-lang="ru_RU"></li>
+					<li class="ib english" data-lang="en_US"></li>
+				</ul>
+				<a href="{baseurl()}" style="display: block;margin: 0 auto;width: 427px; padding-top: 20px;">
+					<div id="logo"></div>
+					<div id="banner" class="ib">{#banner#}</div>
 				</a>
 			</div>
 		</header>
 
-		<noscript><p class="wrapper">Javascript should be enabled in order to work with website</p></noscript>
+		<noscript><p class="wrapper">{#javascript#}</p></noscript>
 
 		<article class="wrapper content {$class} {$method}">
 			{"debug"|log_message:"Renderering $directory/$class/$method.tpl"}
@@ -86,15 +92,11 @@
 							"border='0' width='88' height='15' style='margin-top: 25px;'><\/a>");
 					{/literal}
 					//--></script><!--/LiveInternet-->
-					<div class="note" style="margin-top: 15px; padding: 0 10px;  position: absolute; text-align: center;  width: 930px;">
-						CatsBoobs.com - квинтэссенция всего приятного в Интернете: сиськи, котики, груди, киски, буфера, девушки, коты и кошки - только лучшие фотографии на одном портале!<br/>
-						Cайт не несет ответственности за содержание материалов, размещаемых пользователями. Все картинки являются собственностью их правообладателей.<br/>
-						Для урегулирования спорных вопросов, свяжитесь с редакцией, и спорный контент будет удален
-					</div>
+					<div class="note" style="margin-top: 15px; padding: 0 10px;  position: absolute; text-align: center;  width: 930px;">{#copy#}</div>
 				</div>
 				<div class="ib bottom">
 					<ul class="c social4">
-						<li class="ib"><a href="mailto:catsboobs@gmail.com" class="email"></a></li>
+						<li class="ib"><a href="{baseurl()}rss" class="rss"></a></li>
 						<li class="ib"><a href="http://vk.com/catsboobs" class="vkontakte"></a></li>
 						<li class="ib"><a href="http://www.facebook.com/CatsBoobs" class="facebook"></a></li>
 						<li class="ib"><a href="https://twitter.com/#!/catsboobs" class="twitter"></a></li>

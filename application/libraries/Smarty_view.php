@@ -8,6 +8,8 @@ class Smarty_view extends Smarty {
 	public function __construct() {
 		parent::__construct();
 		$this->template_dir = APPPATH . 'views';
+		$conf =& get_config();
+		$this->config_dir = APPPATH . 'language/'.$conf['language'];
 		$this->compile_dir = 'temp';
 		$this->cache_dir = 'temp';
 		$this->force_compile = false;

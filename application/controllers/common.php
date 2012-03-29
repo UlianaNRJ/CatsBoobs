@@ -27,7 +27,7 @@ class Common extends AbstractController {
 			->addJs('common/index.js')
 			->addCss('upload.css');
 
-		return $this->getActionResult();
+		$this->getActionResult();
 	}
 
 	public function indexAjaxPost() {
@@ -192,6 +192,17 @@ class Common extends AbstractController {
 
 	public function browserNotSupported() {
 		return $this->getActionResult();
+	}
+
+	public function changeLanguage($lang) {
+		$status = 'success';
+		if ($lang != 'ru_RU' && $lang != 'en_US'){
+			$lang = 'ru_RU';
+			$status = 'error';
+		}
+		$this->session->set_userdata('lang', $lang);
+		echo json_encode(array('message'=>'', 'status'=>$status));
+		return;
 	}
 
 	protected function _createImage($file){

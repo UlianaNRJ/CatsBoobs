@@ -7,40 +7,23 @@ header{
 	height: 88px;
     margin-bottom: 15px;
 }
-	.background .pink .top,
-	.background .pink .bottom{
-		background-color: rgba(255, 221, 233, 0.5);
-	}
-	.background .black .top,
-	.background .black .bottom{
-		background-color: rgba(24, 24, 24, 0.5);
-
-	}
-    .background .pink .top {
-        margin-bottom: 100%;
-        height: 88px;
-    }
-    .background .bottom{
-        position: absolute;
-        bottom: 0;
-        width: 50%;
-        height: 100px;
-    }
-		.background .pink img{
-			float: right;
-			padding: 23px 250px 23px 0;
-		}
-		.background .black img{
-			padding: 23px 0 23px 245px;
-		}
-
 	#logo {
+		background: url("../img/logo.png") transparent 0 0 scroll no-repeat;
 		margin: 0 auto;
-		padding-top: 20px;
+		width: 300px;
+		height: 38px;
 	}
 	#banner {
-		margin: 0 auto;
-		padding-top: 5px;
+		background: url("../img/banner.png") no-repeat scroll 0 0 transparent;
+		color: #000000;
+		font-size: 16px;
+		height: 55px;
+		line-height: 45px;
+		margin: 5px auto 0;
+		text-align: center;
+		text-transform: uppercase;
+		width: 427px;
+		font-weight: bolder;
 	}
 
 footer {
@@ -105,12 +88,59 @@ article {
 		width: 50%;
 		height: 100%;
 	}
+		.background .pink .top,
+		.background .pink .bottom {
+			background-color: rgba(255, 221, 233, 0.5);
+		}
+		.background .pink .top {
+			margin-bottom: 100%;
+			height: 88px;
+		}
+			.background .pink img{
+				float: right;
+				padding: 23px 250px 23px 0;
+			}
 	.background .black{
 		background: url("../img/background-body-right.png") transparent top left scroll repeat;
 		width: 50%;
 		height: 100%;
 	}
+		.background .black .top,
+		.background .black .bottom {
+			background-color: rgba(24, 24, 24, 0.5);
+		}
+		.background .bottom {
+			position: absolute;
+			bottom: 0;
+			width: 50%;
+			height: 100px;
+		}
+			.background .black img{
+				padding: 23px 0 23px 245px;
+			}
 
-footer .bottom{
 
+#lang {
+	float: right;
+	margin-top: 92px;
+	width: 55px;
 }
+	#lang li {
+		background: url("../img/flags.png") transparent 0 0 scroll no-repeat;
+		height: 20px;
+		width: 25px;
+		cursor: pointer;
+	}
+	#lang .russian {
+		background-position: 0 0;
+	}
+	#lang .russian.active {
+		background-position: 0 -28px;
+	}
+	#lang .english {
+		margin-left: 5px;
+		background-position: -32px 0;
+	}
+	#lang .english.active {
+		background-position: -32px -28px;
+	}

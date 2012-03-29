@@ -14,7 +14,7 @@ class Login extends AbstractAdminController {
 
 	public function index() {
 		if ($this->getAuth()->isUserAuthenticated()) {
-			return $this->redirect('admin/dashboard');
+			$this->redirect('admin/dashboard');
 		}
 
 		$account = $this->session->userdata('login-admin-info');

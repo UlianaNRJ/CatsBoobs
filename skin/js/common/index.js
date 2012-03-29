@@ -61,11 +61,11 @@ jQuery(document).ready(function($){
 	                // VKontakte
 	                $(".btn_vk").html(window.VK.Share.button({
 	                    url: location.protocol + "//" + location.hostname + "/#!" + data.id,
-	                    title: 'Семейный развлекательный портал «Сиськи и котики»',
-	                    description: 'Это не только квинтэссенция всего приятного в интернете, но и действительно полезный для общества проект, призванный решить самые острые социальные проблемы!',
+	                    title: window.L.social.vk.title,
+	                    description: window.L.social.vk.description,
 	                    image: location.protocol + "//" + location.hostname + "/content/" + data.uniqid + ".png",
 	                    noparse: true
-	                },{type: "round", text: "Мне нравится"}));
+	                },{type: "round", text: window.L.social.vk.button}));
 				} catch (e){
 					console.log("problems with VK");
 				}
@@ -117,7 +117,7 @@ jQuery(document).ready(function($){
 	});
 
 	$("#catsboobs").click(function(){
-		getPost(current.next);
+		getPost(current.prev);
 	});
 
 	$("#sorting").selectmenu("option", {select: function(event, ui){

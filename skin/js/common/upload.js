@@ -45,8 +45,8 @@ jQuery(document).ready(function($){
 	});
 	$("#upload_form input[type=file]").change(function(){
 		var self = $(this);
-		self.parent().find(".name").text("Имя:" + self.val().split("\\").pop().substring(0, 20)); // +"…"
-		self.parent().find(".size").text("Размер:" + (this.files[0].size/1024).toFixed(2) + "Kb");
+		self.parent().find(".name").text(window.L.upload.form.name + self.val().split("\\").pop().substring(0, 20)); // +"…"
+		self.parent().find(".size").text(window.L.upload.form.size + (this.files[0].size/1024).toFixed(2) + "Kb");
 	});
 	$('#upload_form').ajaxForm({
 		dataType: "html",
@@ -59,13 +59,13 @@ jQuery(document).ready(function($){
 		success: function(data){
 			var errors = $.parseJSON(data);
 			if ($.isEmptyObject(errors)){
-				$("#status").text("Картинки успешно отправлены на модерацию").addClass("success");
+				$("#status").text(window.L.upload.response.success).addClass("success");
 				$("#upload_dialog")
 					.find(".name, .size").text("").end()
 					.find("input[type=file]").val("");
 				_gaq.push(['_trackEvent', 'New_Photo', 'Add_success']);
 			}else{
-				$("#status").text("При загрузке картинок произошли ошибки").addClass("error");
+				$("#status").text(window.L.upload.response.error).addClass("error");
 				for(var i in errors){
 					$(".error", "#"+i).text(errors[i]);
 				}
