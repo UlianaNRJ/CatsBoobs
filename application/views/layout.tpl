@@ -59,8 +59,8 @@
 		<header>
 			<div class="c wrapper">
 				<ul id="lang" class="c">
-					<li class="ib russian" data-lang="ru_RU"></li>
-					<li class="ib english" data-lang="en_US"></li>
+					<li class="ib russian {if $lang == "ru_RU"}active{/if}" data-lang="ru_RU"></li>
+					<li class="ib english {if $lang == "en_US"}active{/if}" data-lang="en_US"></li>
 				</ul>
 				<a href="{baseurl()}" style="display: block;margin: 0 auto;width: 427px; padding-top: 20px;">
 					<div id="logo"></div>

@@ -127,7 +127,7 @@ jQuery(document).ready(function($){
 			type: "get",
 			success: function (data){
 				if (data.status == 'success'){
-					window.location.reload(true);
+					window.location.reload();
 				}
 			}
 		});

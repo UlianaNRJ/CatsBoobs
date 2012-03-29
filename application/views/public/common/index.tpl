@@ -21,9 +21,6 @@
 		</div>
 	</div>
 	<div class="c social">
-		<div class="ib" style="width: 110px; font-size: 14px; font-weight: bold; line-height: 35px;">
-			{#share#}
-		</div>
 		<div class="ib share_button btn_fb">
 
 		</div>
@@ -36,7 +33,7 @@
 		<div class="ib share_button btn_ok">
 			<a class="odkl-klass" href="#">{#klass_text#}</a>
 		</div>
-		<div class="ib" style="padding: 3px 0;width: 130px;">
+		<div class="ib" style="padding: 3px 0;width: 240px;">
 
 		</div>
 		<div class="ib ">

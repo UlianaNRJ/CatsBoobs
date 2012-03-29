@@ -9,6 +9,7 @@ div.upload{
 	text-align: center;
 	line-height: 71px;
 	text-decoration: none;
+	cursor: pointer;
 
 	text-shadow: 1px 1px 0 #000000;
 }
